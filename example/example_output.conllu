@@ -1,0 +1,33 @@
+# newdoc id = ssj16
+# newpar id = ssj16.72
+# sent_id = ssj16.72.282
+# text = TRISOBNO stanovanje v Štorah, Na lipi, 76 m2, ugodno prodam.
+1	TRISOBNO	trisoben	ADJ	Ppnset	Case=Acc|Degree=Pos|Gender=Neut|Number=Sing	2	amod	_	_
+2	stanovanje	stanovanje	NOUN	Soset	Case=Acc|Gender=Neut|Number=Sing	13	obj	_	_
+3	v	v	ADP	Dm	Case=Loc	4	case	_	_
+4	Štorah	Štore	PROPN	Slzmm	Case=Loc|Gender=Fem|Number=Plur	2	nmod	_	SpaceAfter=No
+5	,	,	PUNCT	U	_	7	punct	_	_
+6	Na	na	ADP	Dm	Case=Loc	7	case	_	_
+7	lipi	lipa	NOUN	Sozem	Case=Loc|Gender=Fem|Number=Sing	4	appos	_	SpaceAfter=No
+8	,	,	PUNCT	U	_	10	punct	_	_
+9	76	76	NUM	Kag	NumForm=Digit|NumType=Card	10	nummod	_	_
+10	m2	m2	NOUN	Somei	Case=Nom|Gender=Masc|Number=Sing	2	appos	_	SpaceAfter=No
+11	,	,	PUNCT	U	_	10	punct	_	_
+12	ugodno	ugodno	ADV	Rsn	Degree=Pos	13	advmod	_	_
+13	prodam	prodati	VERB	Ggdspe	Aspect=Perf|Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+14	.	.	PUNCT	U	_	13	punct	_	_
+
+# sent_id = ssj16.72.283
+# text = Telefon po 20. uri (063) 443-127.
+1	Telefon	telefon	NOUN	Somei	Case=Nom|Gender=Masc|Number=Sing	0	root	_	_
+2	po	po	ADP	Dm	Case=Loc	4	case	_	_
+3	20.	20.	NUM	Kav	NumForm=Digit|NumType=Ord	4	nummod	_	_
+4	uri	ura	NOUN	Sozem	Case=Loc|Gender=Fem|Number=Sing	1	nmod	_	_
+5	(	(	PUNCT	U	_	6	punct	_	SpaceAfter=No
+6	063	063	NUM	Kag	NumForm=Digit|NumType=Card	1	appos	_	SpaceAfter=No
+7	)	)	PUNCT	U	_	6	punct	_	_
+8	443	443	NUM	Kag	NumForm=Digit|NumType=Card	6	flat	_	SpaceAfter=No
+9	-	-	PUNCT	U	_	6	punct	_	SpaceAfter=No
+10	127	127	NUM	Kag	NumForm=Digit|NumType=Card	6	flat	_	SpaceAfter=No
+11	.	.	PUNCT	U	_	1	punct	_	_
+

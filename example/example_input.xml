@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<div xmlns="http://www.tei-c.org/ns/1.0" xml:id="ssj16" xml:lang="sl">
+   <bibl corresp="#ssj16" n="F0021332">
+      <title>Novi tednik NT&amp;RC</title>
+      <publisher>Novi tednik</publisher>
+      <note type="handle">http://hdl.handle.net/11356/1434</note>
+      <note type="source">ssj500k 2.3</note>
+      <note type="COBISS_ID">19594498</note>
+      <date>1997-09-29</date>
+      <term ref="#Ft.P.P.O.P.C.T" type="Ft" xml:lang="sl">prenosnik / pisni / objavljeno / periodično / časopisno / tedensko</term>
+      <term ref="#Ft.P.P.O.P.C.T" type="Ft" xml:lang="en">medium / written / published / periodical / newspaper / weekly</term>
+      <term ref="#Ft.Z.N.N" type="Ft" xml:lang="sl">zvrst / neumetnostna / nestrokovna</term>
+      <term ref="#Ft.Z.N.N" type="Ft" xml:lang="en">text type / non-fiction / non-professional</term>
+   </bibl>
+   <p xml:id="ssj16.72">
+      <s xml:id="ssj16.72.282">
+         <w ana="mte:Ppnset" msd="UPosTag=ADJ|Case=Acc|Degree=Pos|Gender=Neut|Number=Sing" lemma="trisoben" xml:id="ssj16.72.282.t1">TRISOBNO</w>
+         <w ana="mte:Soset" msd="UPosTag=NOUN|Case=Acc|Gender=Neut|Number=Sing" lemma="stanovanje" xml:id="ssj16.72.282.t2">stanovanje</w>
+         <w ana="mte:Dm" msd="UPosTag=ADP|Case=Loc" lemma="v" xml:id="ssj16.72.282.t3">v</w>
+         <seg type="name" subtype="loc">
+            <w ana="mte:Slzmm" msd="UPosTag=PROPN|Case=Loc|Gender=Fem|Number=Plur" lemma="Štore" xml:id="ssj16.72.282.t4" join="right">Štorah</w>
+         </seg>
+         <pc ana="mte:U" msd="UPosTag=PUNCT" lemma="," xml:id="ssj16.72.282.t5">,</pc>
+         <seg type="name" subtype="loc">
+            <w ana="mte:Dm" msd="UPosTag=ADP|Case=Loc" lemma="na" xml:id="ssj16.72.282.t6">Na</w>
+            <w ana="mte:Sozem" msd="UPosTag=NOUN|Case=Loc|Gender=Fem|Number=Sing" lemma="lipa" xml:id="ssj16.72.282.t7" join="right">lipi</w>
+         </seg>
+         <pc ana="mte:U" msd="UPosTag=PUNCT" lemma="," xml:id="ssj16.72.282.t8">,</pc>
+         <w ana="mte:Kag" msd="UPosTag=NUM|NumForm=Digit|NumType=Card" lemma="76" xml:id="ssj16.72.282.t9">76</w>
+         <w ana="mte:Somei" msd="UPosTag=NOUN|Case=Nom|Gender=Masc|Number=Sing" lemma="m2" xml:id="ssj16.72.282.t10" join="right">m2</w>
+         <pc ana="mte:U" msd="UPosTag=PUNCT" lemma="," xml:id="ssj16.72.282.t11">,</pc>
+         <w ana="mte:Rsn" msd="UPosTag=ADV|Degree=Pos" lemma="ugodno" xml:id="ssj16.72.282.t12">ugodno</w>
+         <w ana="mte:Ggdspe" msd="UPosTag=VERB|Aspect=Perf|Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin" lemma="prodati" xml:id="ssj16.72.282.t13" join="right">prodam</w>
+         <pc ana="mte:U" msd="UPosTag=PUNCT" lemma="." xml:id="ssj16.72.282.t14">.</pc>
+         <linkGrp corresp="#ssj16.72.282" targFunc="head argument" type="UD-SYN">
+            <link ana="ud-syn:amod" target="#ssj16.72.282.t2 #ssj16.72.282.t1"/>
+            <link ana="ud-syn:obj" target="#ssj16.72.282.t13 #ssj16.72.282.t2"/>
+            <link ana="ud-syn:case" target="#ssj16.72.282.t4 #ssj16.72.282.t3"/>
+            <link ana="ud-syn:nmod" target="#ssj16.72.282.t2 #ssj16.72.282.t4"/>
+            <link ana="ud-syn:punct" target="#ssj16.72.282.t7 #ssj16.72.282.t5"/>
+            <link ana="ud-syn:case" target="#ssj16.72.282.t7 #ssj16.72.282.t6"/>
+            <link ana="ud-syn:appos" target="#ssj16.72.282.t4 #ssj16.72.282.t7"/>
+            <link ana="ud-syn:punct" target="#ssj16.72.282.t10 #ssj16.72.282.t8"/>
+            <link ana="ud-syn:nummod" target="#ssj16.72.282.t10 #ssj16.72.282.t9"/>
+            <link ana="ud-syn:appos" target="#ssj16.72.282.t2 #ssj16.72.282.t10"/>
+            <link ana="ud-syn:punct" target="#ssj16.72.282.t10 #ssj16.72.282.t11"/>
+            <link ana="ud-syn:advmod" target="#ssj16.72.282.t13 #ssj16.72.282.t12"/>
+            <link ana="ud-syn:root" target="#ssj16.72.282 #ssj16.72.282.t13"/>
+            <link ana="ud-syn:punct" target="#ssj16.72.282.t13 #ssj16.72.282.t14"/>
+         </linkGrp>
+         <linkGrp corresp="#ssj16.72.282" targFunc="head argument" type="JOS-SYN">
+            <link ana="jos-syn:dol" target="#ssj16.72.282.t2 #ssj16.72.282.t1"/>
+            <link ana="jos-syn:dve" target="#ssj16.72.282.t13 #ssj16.72.282.t2"/>
+            <link ana="jos-syn:dol" target="#ssj16.72.282.t4 #ssj16.72.282.t3"/>
+            <link ana="jos-syn:dol" target="#ssj16.72.282.t2 #ssj16.72.282.t4"/>
+            <link ana="jos-syn:modra" target="#ssj16.72.282 #ssj16.72.282.t5"/>
+            <link ana="jos-syn:dol" target="#ssj16.72.282.t7 #ssj16.72.282.t6"/>
+            <link ana="jos-syn:modra" target="#ssj16.72.282 #ssj16.72.282.t7"/>
+            <link ana="jos-syn:modra" target="#ssj16.72.282 #ssj16.72.282.t8"/>
+            <link ana="jos-syn:dol" target="#ssj16.72.282.t10 #ssj16.72.282.t9"/>
+            <link ana="jos-syn:modra" target="#ssj16.72.282 #ssj16.72.282.t10"/>
+            <link ana="jos-syn:modra" target="#ssj16.72.282 #ssj16.72.282.t11"/>
+            <link ana="jos-syn:tri" target="#ssj16.72.282.t13 #ssj16.72.282.t12"/>
+            <link ana="jos-syn:modra" target="#ssj16.72.282 #ssj16.72.282.t13"/>
+            <link ana="jos-syn:modra" target="#ssj16.72.282 #ssj16.72.282.t14"/>
+         </linkGrp>
+         <linkGrp corresp="#ssj16.72.282" targFunc="head argument" type="SRL">
+            <link ana="srl:PAT" target="#ssj16.72.282.t13 #ssj16.72.282.t2"/>
+            <link ana="srl:MANN" target="#ssj16.72.282.t13 #ssj16.72.282.t12"/>
+         </linkGrp>
+      </s>
+      <s xml:id="ssj16.72.283">
+         <w ana="mte:Somei" msd="UPosTag=NOUN|Case=Nom|Gender=Masc|Number=Sing" lemma="telefon" xml:id="ssj16.72.283.t1">Telefon</w>
+         <w ana="mte:Dm" msd="UPosTag=ADP|Case=Loc" lemma="po" xml:id="ssj16.72.283.t2">po</w>
+         <w ana="mte:Kav" msd="UPosTag=NUM|NumForm=Digit|NumType=Ord" lemma="20." xml:id="ssj16.72.283.t3">20.</w>
+         <w ana="mte:Sozem" msd="UPosTag=NOUN|Case=Loc|Gender=Fem|Number=Sing" lemma="ura" xml:id="ssj16.72.283.t4">uri</w>
+         <pc ana="mte:U" msd="UPosTag=PUNCT" lemma="(" xml:id="ssj16.72.283.t5" join="right">(</pc>
+         <w ana="mte:Kag" msd="UPosTag=NUM|NumForm=Digit|NumType=Card" lemma="063" xml:id="ssj16.72.283.t6" join="right">063</w>
+         <pc ana="mte:U" msd="UPosTag=PUNCT" lemma=")" xml:id="ssj16.72.283.t7">)</pc>
+         <w ana="mte:Kag" msd="UPosTag=NUM|NumForm=Digit|NumType=Card" lemma="443" xml:id="ssj16.72.283.t8" join="right">443</w>
+         <pc ana="mte:U" msd="UPosTag=PUNCT" lemma="-" xml:id="ssj16.72.283.t9" join="right">-</pc>
+         <w ana="mte:Kag" msd="UPosTag=NUM|NumForm=Digit|NumType=Card" lemma="127" xml:id="ssj16.72.283.t10" join="right">127</w>
+         <pc ana="mte:U" msd="UPosTag=PUNCT" lemma="." xml:id="ssj16.72.283.t11">.</pc>
+         <linkGrp corresp="#ssj16.72.283" targFunc="head argument" type="UD-SYN">
+            <link ana="ud-syn:root" target="#ssj16.72.283 #ssj16.72.283.t1"/>
+            <link ana="ud-syn:case" target="#ssj16.72.283.t4 #ssj16.72.283.t2"/>
+            <link ana="ud-syn:nummod" target="#ssj16.72.283.t4 #ssj16.72.283.t3"/>
+            <link ana="ud-syn:nmod" target="#ssj16.72.283.t1 #ssj16.72.283.t4"/>
+            <link ana="ud-syn:punct" target="#ssj16.72.283.t6 #ssj16.72.283.t5"/>
+            <link ana="ud-syn:appos" target="#ssj16.72.283.t1 #ssj16.72.283.t6"/>
+            <link ana="ud-syn:punct" target="#ssj16.72.283.t6 #ssj16.72.283.t7"/>
+            <link ana="ud-syn:flat" target="#ssj16.72.283.t6 #ssj16.72.283.t8"/>
+            <link ana="ud-syn:punct" target="#ssj16.72.283.t6 #ssj16.72.283.t9"/>
+            <link ana="ud-syn:flat" target="#ssj16.72.283.t6 #ssj16.72.283.t10"/>
+            <link ana="ud-syn:punct" target="#ssj16.72.283.t1 #ssj16.72.283.t11"/>
+         </linkGrp>
+         <linkGrp corresp="#ssj16.72.283" targFunc="head argument" type="JOS-SYN">
+            <link ana="jos-syn:modra" target="#ssj16.72.283 #ssj16.72.283.t1"/>
+            <link ana="jos-syn:dol" target="#ssj16.72.283.t4 #ssj16.72.283.t2"/>
+            <link ana="jos-syn:dol" target="#ssj16.72.283.t4 #ssj16.72.283.t3"/>
+            <link ana="jos-syn:modra" target="#ssj16.72.283 #ssj16.72.283.t4"/>
+            <link ana="jos-syn:modra" target="#ssj16.72.283 #ssj16.72.283.t5"/>
+            <link ana="jos-syn:modra" target="#ssj16.72.283 #ssj16.72.283.t6"/>
+            <link ana="jos-syn:modra" target="#ssj16.72.283 #ssj16.72.283.t7"/>
+            <link ana="jos-syn:modra" target="#ssj16.72.283 #ssj16.72.283.t8"/>
+            <link ana="jos-syn:modra" target="#ssj16.72.283 #ssj16.72.283.t9"/>
+            <link ana="jos-syn:modra" target="#ssj16.72.283 #ssj16.72.283.t10"/>
+            <link ana="jos-syn:modra" target="#ssj16.72.283 #ssj16.72.283.t11"/>
+         </linkGrp>
+      </s>
+   </p>
+</div>
