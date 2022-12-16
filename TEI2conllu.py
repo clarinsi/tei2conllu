@@ -113,6 +113,47 @@ def write_jos_links(tei_sentence, conllu_sentence):
                 conllu_sentence[dependent]["deprel"] = link_name
 
 
+# a function which recursively calls itself until it finds the "bibl" element, then runs the main process of writing
+# sentences to the list of conllu sentences.
+def write_everything(root, list_of_sents):
+    if root.find("{http://www.tei-c.org/ns/1.0}bibl"):
+
+        # go through all the TEI sentences and write all the data from each sentence to a new conllu TokenList object. At the
+        # end, append the TokenList to the list of conllu sentences
+        doc_id = get_doc_id(root)
+        for ele in root:
+            if ele.tag == "{http://www.tei-c.org/ns/1.0}p":
+                para_id = get_para_id(ele)
+                for tei_sent in ele:
+                    sent_to_write = conllu.TokenList()
+
+                    if tei_sent == root[1][0]:
+                        sent_to_write.metadata.update({"newdoc id": doc_id})
+
+                    if tei_sent == ele[0]:
+                        sent_to_write.metadata.update({"newpar id": para_id})
+
+                    sent_id = get_sent_id(tei_sent)
+                    sent_to_write.metadata.update({"sent_id": sent_id})
+
+                    tei_sent_text = get_sent_text(tei_sent)
+                    sent_to_write.metadata.update({"text": tei_sent_text})
+
+                    write_elements(tei_sent, sent_to_write)
+
+                    # check whether the sentence has syntactic links
+                    if tei_sent.find("{http://www.tei-c.org/ns/1.0}linkGrp"):
+                        if args.syn == "UD":
+                            write_ud_links(tei_sent, sent_to_write)
+                        else:
+                            write_jos_links(tei_sent, sent_to_write)
+
+                    list_of_sents.append(sent_to_write)
+    else:
+        for child in root:
+            write_everything(child, list_of_sents)
+
+
 # main part of the script
 # argparse
 argparser = argparse.ArgumentParser(description="Convert TEI XML file to .conllu file.")
@@ -123,46 +164,14 @@ args = argparser.parse_args()
 
 # import TEI XML data with ElementTree
 tree = ET.parse(args.file)
-root = tree.getroot()
-
-#check if TEI file has the right sequence of elements
-if root[0].tag == "{http://www.tei-c.org/ns/1.0}bibl" and root[1].tag == "{http://www.tei-c.org/ns/1.0}p":
-    print("Sequence of elements in file is OK")
-else:
-    raise Exception("The sequence of elements in the TEI XML is not supported")
+et_root = tree.getroot()
 
 # prepare list of conllu sentences
 ConlluSentences = []
 
-# go through all the TEI sentences and write all the data from each sentence to a new conllu TokenList object. At the
-# end, append the TokenList to the list of conllu sentences
-doc_id = get_doc_id(root)
-for ele in root:
-    if ele.tag == "{http://www.tei-c.org/ns/1.0}p":
-        para_id = get_para_id(ele)
-        for tei_sent in ele:
-            sent_to_write = conllu.TokenList()
+# call the main function which writes sentences to a list of conllu TokenLists
+write_everything(et_root, ConlluSentences)
 
-            if tei_sent == root[1][0]:
-                sent_to_write.metadata.update({"newdoc id": doc_id})
-
-            if tei_sent == ele[0]:
-                sent_to_write.metadata.update({"newpar id": para_id})
-
-            sent_id = get_sent_id(tei_sent)
-            sent_to_write.metadata.update({"sent_id": sent_id})
-
-            tei_sent_text = get_sent_text(tei_sent)
-            sent_to_write.metadata.update({"text": tei_sent_text})
-
-            write_elements(tei_sent, sent_to_write)
-
-            if args.syn == "UD":
-                write_ud_links(tei_sent, sent_to_write)
-            else:
-                write_jos_links(tei_sent, sent_to_write)
-
-            ConlluSentences.append(sent_to_write)
 
 # go through the conllu sentence list and write to a .conllu file
 with open(f"{args.file[:-3]}conllu", "w", encoding="UTF-8") as write_file:
