@@ -153,6 +153,17 @@ def write_everything(root, list_of_sents):
         for child in root:
             write_everything(child, list_of_sents)
 
+# convert Slovenian msds to English
+def sl_to_en_msd(list_of_sents):
+    with open("msd_conversion/josMSD.tbl", "r", encoding="UTF-8") as read_file:
+        conversions = read_file.read().splitlines()
+        for sent in list_of_sents:
+            for token in sent:
+                for line in conversions:
+                    if token["xpos"] == line.split("\t")[1]:
+                        token["xpos"] = line.split("\t")[2]
+                        break
+
 
 # main part of the script
 # argparse
@@ -172,6 +183,8 @@ ConlluSentences = []
 # call the main function which writes sentences to a list of conllu TokenLists
 write_everything(et_root, ConlluSentences)
 
+# convert Slovenian msds to English - uncomment to enable. Warning: this is very slow!
+# sl_to_en_msd(ConlluSentences)
 
 # go through the conllu sentence list and write to a .conllu file
 with open(f"{args.file[:-3]}conllu", "w", encoding="UTF-8") as write_file:
