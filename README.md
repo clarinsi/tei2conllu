@@ -10,4 +10,4 @@ Running through a command line:
 
 `TEI2conllu.py input_file.xml --syn-type JOS` for JOS links
 
-Example input and output files can be found in the example/ directory. At the moment, only files with the same schema as the example input file will work.
+Example input and output files can be found in the example/ directory.
