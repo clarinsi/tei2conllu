@@ -113,6 +113,20 @@ def write_jos_links(tei_sentence, conllu_sentence):
                 conllu_sentence[dependent]["deprel"] = link_name
 
 
+# takes a sentence from TEI and a sentence from conllu and fills the conllu with Semantic Role Labels
+def write_srl(tei_sentence, conllu_sentence):
+    for element in tei_sentence:
+        if element.tag == "{http://www.tei-c.org/ns/1.0}linkGrp" and element.attrib["type"] == "SRL":
+            for link in element:
+                link_name = link.attrib["ana"][4:]
+                dependent = link.attrib["target"].split(" ")[1]
+                dependent = int(dependent.split(".")[-1][1:]) - 1
+                if type(conllu_sentence[dependent]["misc"]) == dict:
+                    conllu_sentence[dependent]["misc"]["SRL"] = link_name
+                else:
+                    conllu_sentence[dependent]["misc"] = {"SRL": link_name}
+
+
 # a function which recursively calls itself until it finds the "bibl" element, then runs the main process of writing
 # sentences to the list of conllu sentences.
 def write_everything(root, list_of_sents):
@@ -145,6 +159,9 @@ def write_everything(root, list_of_sents):
                     if tei_sent.find("{http://www.tei-c.org/ns/1.0}linkGrp"):
                         if args.syn == "UD":
                             write_ud_links(tei_sent, sent_to_write)
+                        elif args.syn == "JOS+SRL":
+                            write_jos_links(tei_sent, sent_to_write)
+                            write_srl(tei_sent, sent_to_write)
                         else:
                             write_jos_links(tei_sent, sent_to_write)
 
@@ -169,8 +186,8 @@ def sl_to_en_msd(list_of_sents):
 # argparse
 argparser = argparse.ArgumentParser(description="Convert TEI XML file to .conllu file.")
 argparser.add_argument("file", type=str, help="Name of the TEI XML file to be converted.")
-argparser.add_argument("--syn-type", dest="syn", type=str, choices=["UD", "JOS"], default="UD",
-                       help="Syntactic relation type to be included (UD or JOS). Defaults to UD.")
+argparser.add_argument("--syn-type", dest="syn", type=str, choices=["UD", "JOS", "JOS+SRL"], default="UD",
+                       help="Syntactic relation type to be included (UD, JOS, or JOS+SRL). Defaults to UD.")
 args = argparser.parse_args()
 
 # import TEI XML data with ElementTree
